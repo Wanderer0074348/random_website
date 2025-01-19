@@ -133,8 +133,7 @@ const TerminalHero = () => {
             <div className="flex flex-col sm:flex-row gap-6 md:gap-12">
               {/* ASCII Art */}
               <div 
-                className={`font-mono text-ubuntu whitespace-pre text-xs md:text-sm transition-all duration-300
-                  ${isHovered ? 'animate-pulse' : ''}`}
+                className={`font-mono text-ubuntu whitespace-pre text-xs md:text-sm`}
               >
                 <pre className="leading-[1.15] overflow-x-auto">
                   {asciiArt.map((line, index) => (

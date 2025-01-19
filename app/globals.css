@@ -126,6 +126,15 @@
   border-radius: 20px;
 }
 
+.clip-path-polygon-left {
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+}
+
+.clip-path-polygon-right {
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+
 body {
   background: black;
 }
