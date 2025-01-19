@@ -57,7 +57,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-white/40 text-sm font-mono">
-            © {new Date().getFullYear()} Linux Users Group. All rights reserved.
+           Linux Users Group Bits Pilani Dubai Campus
           </p>
         </div>
       </div>
