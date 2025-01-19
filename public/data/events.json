@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "title": "Linux Installation Workshop",
+      "date": "2024-01-15T10:00:00",
+      "description": "A hands-on workshop where participants learned to install various Linux distributions and understand the basics of the Linux operating system. Topics covered included partitioning, dual-boot setup, and basic terminal commands.",
+      "location": "Lab 204",
+      "attendees": 45
+    },
+    {
+      "id": 2,
+      "title": "Open Source Contributing Session",
+      "date": "2024-01-20T14:00:00",
+      "description": "An interactive session on how to contribute to open source projects, including git basics and GitHub workflow. Participants learned about pull requests, issue tracking, and community guidelines.",
+      "location": "Virtual Meet",
+      "attendees": 60
+    },
+    {
+      "id": 3,
+      "title": "Python for Linux Users",
+      "date": "2024-01-25T15:00:00",
+      "description": "A comprehensive workshop on Python programming in Linux environments. Covered topics included virtual environments, package management with pip, and system automation scripts.",
+      "location": "Lab 301",
+      "attendees": 35
+    },
+    {
+      "id": 4,
+      "title": "System Security Fundamentals",
+      "date": "2024-02-01T13:00:00",
+      "description": "An introduction to Linux system security, covering user permissions, firewall configuration, and basic security practices. Participants learned about common security threats and prevention methods.",
+      "location": "Seminar Hall",
+      "attendees": 50
+    },
+    {
+      "id": 5,
+      "title": "Docker Container Workshop",
+      "date": "2024-02-10T11:00:00",
+      "description": "Hands-on experience with Docker containers, including image creation, container management, and deployment strategies. Participants built and deployed their own containerized applications.",
+      "location": "Virtual Lab",
+      "attendees": 40
+    },
+    {
+      "id": 6,
+      "title": "Linux Gaming Night",
+      "date": "2024-02-15T18:00:00",
+      "description": "A fun evening exploring gaming on Linux, including Steam Proton, Wine, and native Linux games. Participants learned about gaming performance optimization and compatibility tools.",
+      "location": "Recreation Room",
+      "attendees": 30
+    }
+  ]
+  

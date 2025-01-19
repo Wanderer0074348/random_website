@@ -2,20 +2,130 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.animation-delay-2000 {
+  animation-delay: 2s;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #E95420 !important;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 24px !important;
+}
+
+@media (max-width: 768px) {
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 20px !important;
   }
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+.react-calendar-custom {
+  width: 100% !important;
+  max-width: 600px !important;
+  height: 100% !important;
+  background-color: transparent !important;
+  border: none !important;
+  font-family: monospace !important;
+}
+
+.react-calendar-custom button {
+  color: rgba(255, 255, 255, 0.8) !important;
+  padding: 8px !important;
+  font-size: 1rem !important;
+  @media (min-width: 768px) {
+    padding: 12px !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+.react-calendar-custom button:enabled:hover {
+  background-color: rgba(233, 84, 32, 0.1) !important;
+}
+
+.react-calendar-custom button:enabled:focus {
+  background-color: rgba(233, 84, 32, 0.2) !important;
+}
+
+.react-calendar-custom .react-calendar__tile--active {
+  background-color: #E95420 !important;
+  color: white !important;
+}
+
+.react-calendar-custom .react-calendar__month-view__weekdays {
+  color: #E95420 !important;
+  font-weight: bold;
+  font-size: 0.9rem !important;
+  @media (min-width: 768px) {
+    font-size: 1.1rem !important;
+  }
+  padding: 8px 0 !important;
+}
+
+.react-calendar-custom .react-calendar__navigation {
+  height: 40px !important;
+  @media (min-width: 768px) {
+    height: 50px !important;
+  }
+  margin-bottom: 1rem !important;
+}
+
+.react-calendar-custom .react-calendar__navigation button {
+  color: #E95420 !important;
+  font-size: 1rem !important;
+  @media (min-width: 768px) {
+    font-size: 1.2rem !important;
+  }
+  min-width: 44px !important;
+}
+
+.react-calendar-custom .react-calendar__tile {
+  position: relative;
+  height: 50px !important;
+  @media (min-width: 768px) {
+    height: 70px !important;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(233, 84, 32, 0.6);
+  border-radius: 20px;
+}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: black;
 }
