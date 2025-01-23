@@ -36,7 +36,7 @@ const ContributionSection = () => {
   return (
     <div className="w-full relative">
       {/* Ubuntu orange borders */}
-      <div className="w-full h-[2px] bg-[#E95420] absolute top-0 z-10" />
+      {/* <div className="w-full h-[2px] bg-[#E95420] absolute top-0 z-10" /> */}
       <div className="w-full h-[2px] bg-[#E95420] absolute bottom-0 z-10" />
 
       <div className="max-w-7xl mx-auto px-4 py-24 md:py-32 relative z-10">

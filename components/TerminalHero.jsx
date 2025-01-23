@@ -106,56 +106,63 @@ const TerminalHero = () => {
   ];
 
   return (
-    <div className="w-full flex justify-center px-4 mt-2">
-      <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-4">
+    <div className="w-full flex items-center justify-center px-4 py-8">
+      <div className="w-full max-w-7xl flex flex-col-reverse lg:flex-row gap-8 relative">
         {/* Terminal Column */}
         <div 
           className={`w-full lg:w-1/2 backdrop-blur-sm bg-black/30 rounded-lg border border-ubuntu 
-            transition-all duration-500 transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            transition-all duration-500 transform hover:shadow-[0_0_15px_rgba(233,84,32,0.3)]
+            ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div className="p-4 md:p-8">
+          <div className="p-4 md:p-8 relative">
             {/* Terminal Header */}
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-3 h-3 rounded-full bg-[#FF605C]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#FFBD44]"></div>
-              <div className="w-3 h-3 rounded-full bg-[#00CA4E]"></div>
+            <div className="flex items-center gap-2 mb-6 bg-black/40 rounded-t-lg p-3">
+              <div className="w-3 h-3 rounded-full bg-[#FF605C] hover:brightness-110 transition-all"></div>
+              <div className="w-3 h-3 rounded-full bg-[#FFBD44] hover:brightness-110 transition-all"></div>
+              <div className="w-3 h-3 rounded-full bg-[#00CA4E] hover:brightness-110 transition-all"></div>
               <span className="ml-2 text-white/60 text-sm font-mono">terminal@user: ~</span>
             </div>
 
-            {/* Command Prompt */}
-            <div className="mb-6 font-mono text-white/60">
-              <span className="text-ubuntu">$</span> neofetch
+            {/* Command Prompt with Typing Effect */}
+            <div className="mb-6 font-mono text-white/60 flex items-center">
+              <span className="text-ubuntu mr-2">$</span>
+              <span className="typing-animation">neofetch</span>
             </div>
 
             {/* Terminal Content */}
             <div className="flex flex-col sm:flex-row gap-6 md:gap-12">
-              {/* ASCII Art */}
-              <div 
-                className={`font-mono text-ubuntu whitespace-pre text-xs md:text-sm`}
-              >
-                <pre className="leading-[1.15] overflow-x-auto">
-                  {asciiArt.map((line, index) => (
-                    <div 
-                      key={index} 
-                      className={`transition-all duration-500 delay-${index * 50}`}
-                    >
-                      {line}
-                    </div>
-                  ))}
-                </pre>
+              {/* ASCII Art with Glow Effect */}
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-ubuntu/20 to-transparent 
+                  rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div className="relative font-mono text-ubuntu whitespace-pre text-xs md:text-sm">
+                  <pre className="leading-[1.15] overflow-x-auto scrollbar-thin scrollbar-thumb-ubuntu/30">
+                    {asciiArt.map((line, index) => (
+                      <div 
+                        key={index} 
+                        className={`transition-all duration-500 delay-${index * 50} hover:text-white`}
+                      >
+                        {line}
+                      </div>
+                    ))}
+                  </pre>
+                </div>
               </div>
 
-              {/* System Information */}
-              <div className="font-mono text-white/80 flex flex-col justify-center space-y-1">
+              {/* System Information with Hover Effects */}
+              <div className="font-mono text-white/80 flex flex-col justify-center space-y-2">
                 {systemInfo.map((info, index) => (
                   <div 
                     key={index} 
-                    className={`transition-all duration-300 flex items-center gap-3
-                      ${isHovered ? 'hover:text-ubuntu hover:translate-x-1' : ''}`}
+                    className={`transition-all duration-300 flex items-center gap-3 p-2 rounded-lg
+                      hover:bg-white/5 ${isHovered ? 'hover:translate-x-1' : ''}`}
                   >
-                    <span className="text-ubuntu w-24 md:w-28">{info.label}</span>
+                    <span className="text-ubuntu w-24 md:w-28 flex items-center">
+                      <span className="w-2 h-2 bg-ubuntu rounded-full mr-2 opacity-75"></span>
+                      {info.label}
+                    </span>
                     <span className="text-white/80 break-all">{info.value}</span>
                   </div>
                 ))}
@@ -167,18 +174,30 @@ const TerminalHero = () => {
         {/* Club Info Column */}
         <div 
           className={`w-full lg:w-1/2 backdrop-blur-sm bg-black/30 rounded-lg border border-ubuntu 
-            transition-all duration-500 transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            transition-all duration-500 transform hover:shadow-[0_0_15px_rgba(233,84,32,0.3)]
+            ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
-          <div className="p-4 md:p-8 flex flex-col justify-center h-full">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-mono">
-              We are
-            </h1>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ubuntu mb-4 font-mono">
-              Linux Users Group
+          <div className="p-4 md:p-8 flex flex-col justify-center h-full relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0 bg-gradient-to-br from-ubuntu/20 via-transparent to-ubuntu/20" />
+              <div className="h-full w-full bg-[linear-gradient(45deg,transparent_25%,white_25%,white_50%,transparent_50%,transparent_75%,white_75%,white_100%)] bg-[length:20px_20px]" />
+            </div>
+
+            <div className="relative">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-mono 
+                transform transition-all duration-300 hover:scale-105">
+                We are
               </h1>
-            <p className="text-base sm:text-lg md:text-xl text-white/80 font-mono leading-relaxed">
-              Empowering open-source innovation through community collaboration and knowledge sharing
-            </p>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-ubuntu mb-6 font-mono 
+                transform transition-all duration-300 hover:scale-105">
+                Linux Users Group
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl text-white/80 font-mono leading-relaxed 
+                border-l-2 border-ubuntu pl-4">
+                Empowering open-source innovation through community collaboration and knowledge sharing
+              </p>
+            </div>
           </div>
         </div>
       </div>

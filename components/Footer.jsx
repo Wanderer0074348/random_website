@@ -34,7 +34,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-black relative">
       {/* Ubuntu orange borders */}
-      <div className="w-full h-[2px] bg-[#E95420] absolute top-0" />
+      {/* <div className="w-full h-[2px] bg-[#E95420] absolute top-0" /> */}
       <div className="w-full h-[2px] bg-[#E95420] absolute bottom-0" />
 
       <div className="max-w-7xl mx-auto px-4 py-8">

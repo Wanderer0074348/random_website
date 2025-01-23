@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { CalendarIcon, MapPinIcon, UsersIcon } from '@heroicons/react/24/outline';
+
 
 const EventCalendar = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -58,33 +60,43 @@ const EventCalendar = () => {
   const EventDetails = () => {
     if (!selectedEvent) return (
       <div className="flex items-center justify-center h-full text-white/60">
-        Select an event to view details
+        <p className="text-lg font-mono">Select an event to view details</p>
       </div>
     );
 
     return (
       <div className="h-full overflow-hidden">
         <div className="h-full overflow-y-auto pr-4 custom-scrollbar">
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div className="space-y-4">
-              <div className="flex justify-between items-start">
-                <h3 className="text-2xl font-mono text-[#E95420] break-words">{selectedEvent.title}</h3>
-                <span className="text-white/60">
+              <h3 className="text-3xl font-mono text-[#E95420] break-words">{selectedEvent.title}</h3>
+              <div className="flex items-center text-white/60 space-x-2">
+                <CalendarIcon className="h-5 w-5" />
+                <span>
                   {selectedEvent.date.toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
                     month: 'long',
-                    day: 'numeric',
-                    year: 'numeric'
+                    day: 'numeric'
                   })}
                 </span>
               </div>
-              <p className="text-white/80 break-words">{selectedEvent.description}</p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-zinc-900 p-4 rounded-lg border border-[#E95420]/30">
-                  <p className="text-[#E95420] font-mono mb-2">Location</p>
+            </div>
+            
+            <p className="text-white/80 break-words text-lg leading-relaxed">{selectedEvent.description}</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-zinc-800/50 p-5 rounded-lg border border-[#E95420]/30 flex items-start space-x-3">
+                <MapPinIcon className="h-6 w-6 text-[#E95420] flex-shrink-0" />
+                <div>
+                  <p className="text-[#E95420] font-mono mb-2 font-semibold">Location</p>
                   <p className="text-white/80 break-words">{selectedEvent.location}</p>
                 </div>
-                <div className="bg-zinc-900 p-4 rounded-lg border border-[#E95420]/30">
-                  <p className="text-[#E95420] font-mono mb-2">Attendees</p>
+              </div>
+              <div className="bg-zinc-800/50 p-5 rounded-lg border border-[#E95420]/30 flex items-start space-x-3">
+                <UsersIcon className="h-6 w-6 text-[#E95420] flex-shrink-0" />
+                <div>
+                  <p className="text-[#E95420] font-mono mb-2 font-semibold">Attendees</p>
                   <p className="text-white/80">{selectedEvent.attendees}</p>
                 </div>
               </div>
